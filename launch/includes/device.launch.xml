@@ -14,6 +14,7 @@
   <arg name="depth_registration" default="true" />
   <arg name="color_depth_synchronization" default="false" />
   <arg name="auto_exposure" default="true" />
+  <arg name="exposure"      default="90"/>
   <arg name="auto_white_balance" default="true" />
 
   <arg name="respawn" default="false" />
@@ -39,6 +40,7 @@
     <param name="depth_registration" value="$(arg depth_registration)" />
     <param name="color_depth_synchronization" value="$(arg color_depth_synchronization)" />
     <param name="auto_exposure" value="$(arg auto_exposure)" />
+    <param name="exposure" value="$(arg exposure)" />
     <param name="auto_white_balance" value="$(arg auto_white_balance)" />
 
     <remap from="ir" to="$(arg ir)" />

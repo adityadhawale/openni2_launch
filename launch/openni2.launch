@@ -23,8 +23,9 @@
 
   <!-- Driver parameters -->
   <arg name="color_depth_synchronization"     default="false" />
-  <arg name="auto_exposure"                   default="true" />
-  <arg name="auto_white_balance"              default="true" />
+  <arg name="auto_exposure"                   default="false" />
+  <arg name="exposure"                        default="150" />
+  <arg name="auto_white_balance"              default="false" />
 
   <!-- Arguments for remapping all device namespaces -->
   <arg name="rgb"              default="rgb" />
@@ -83,6 +84,7 @@
       <arg name="depth_registration"              value="$(arg depth_registration)" />
       <arg name="color_depth_synchronization"     value="$(arg color_depth_synchronization)" />
       <arg name="auto_exposure"                   value="$(arg auto_exposure)" />
+      <arg name="exposure"                        value="$(arg exposure)" />
       <arg name="auto_white_balance"              value="$(arg auto_white_balance)" />
     </include>
 
