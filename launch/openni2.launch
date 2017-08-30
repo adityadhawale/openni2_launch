@@ -19,18 +19,20 @@
   <arg name="depth_camera_info_url" default="" />
 
   <!-- Hardware depth registration -->
-  <arg name="depth_registration" default="false" />
+  <arg name="depth_registration" default="true" />
 
   <!-- Driver parameters -->
   <arg name="color_depth_synchronization"     default="false" />
   <arg name="auto_exposure"                   default="true" />
-  <arg name="auto_white_balance"              default="true" />
+  <arg name="auto_white_balance"              default="false" />
 
   <!-- Arguments for remapping all device namespaces -->
   <arg name="rgb"              default="rgb" />
   <arg name="ir"               default="ir" />
   <arg name="depth"            default="depth" />
-
+  <arg name="ir_mode"          default="9" />
+  <arg name="color_mode"       default="9" />
+  <arg name="depth_mode"       default="9"/>
   <!-- Optionally suppress loading the driver nodelet and/or publishing the default tf
        tree. Useful if you are playing back recorded raw data from a bag, or are
        supplying a more accurate tf tree from calibration. -->
@@ -57,7 +59,7 @@
 
   <!-- Push down all topics/nodelets into "camera" namespace -->
   <group ns="$(arg camera)">
-  
+
 	  <!-- Start nodelet manager -->
 	  <arg name="manager" value="$(arg camera)_nodelet_manager" />
 	  <arg name="debug" default="false" /> <!-- Run manager in GDB? -->
@@ -84,6 +86,9 @@
       <arg name="color_depth_synchronization"     value="$(arg color_depth_synchronization)" />
       <arg name="auto_exposure"                   value="$(arg auto_exposure)" />
       <arg name="auto_white_balance"              value="$(arg auto_white_balance)" />
+      <arg name="color_mode"                      value="$(arg color_mode)"/>
+      <arg name="ir_mode"                         value="$(arg ir_mode)"/>
+      <arg name="depth_mode"                      value="$(arg depth_mode)"/>
     </include>
 
     <!-- Load standard constellation of processing nodelets -->
